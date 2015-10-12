@@ -42,7 +42,7 @@ public class MyPlaces {
 	private static final JacksonFactory myJacksonFac = new JacksonFactory();
 	
 	// Fill in the API key you want to use.
-	private String API_KEY = Tracking.getAppContext().getResources().getString(R.string.google_api);
+	private String API_KEY = "1234567";
 
 	// The different Places API endpoints.
 	private static final String PLACES_SEARCH_URL =  

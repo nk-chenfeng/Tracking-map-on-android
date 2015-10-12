@@ -68,6 +68,8 @@ public class MyService extends Service {
 	           
 	          criteria.setAccuracy(Criteria.ACCURACY_COARSE);
 	          String providerCoarse = mgr.getBestProvider(criteria, true);
+	          
+	          Log.e(DEBUG_TAG, "providerFine:" + providerFine + ", providerCoarse:" + providerCoarse);
 	           
 	          if (providerCoarse != null) {
 	              mgr.requestLocationUpdates(providerCoarse, 30000, 5, network_locationer);
@@ -103,6 +105,7 @@ public class MyService extends Service {
 	  public int onStartCommand(Intent intent, int flags, int startId) {
 	      Toast.makeText(this, "local service is started ", Toast.LENGTH_SHORT).show();
 	      mu.appendLog(DEBUG_TAG, "=====tracking is started=====");
+          Log.e(DEBUG_TAG, "=====tracking is started=====");
 	      // For each start request, send a message to start a job and deliver the
 	      // start ID so we know which request we're stopping when we finish the job
 	      Message msg = mServiceHandler.obtainMessage();
@@ -124,6 +127,7 @@ public class MyService extends Service {
 	      // Tell the user we stopped.
 	      Toast.makeText(this, "local service is stopped", Toast.LENGTH_SHORT).show();
 	      mu.appendLog(DEBUG_TAG, "=====tracking is stopped=====");
+          Log.e(DEBUG_TAG, "=====tracking is stopped=====");
 	  }
 	  
 

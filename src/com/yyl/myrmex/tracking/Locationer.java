@@ -25,7 +25,7 @@ class Locationer implements LocationListener {
 	private long mLastLocationMillis;
 	private MyUtility mu;
 	
-	private static final String DEBUG_TAG = "Locationer";
+	private static final String DEBUG_TAG = "MyService.Locationer";
 	private static final String[] Status = {"out of service", "temporarily unavailable", "available"};
 	private static final double ACCU_THRESHOLD = 100.0;
 	
@@ -43,6 +43,9 @@ class Locationer implements LocationListener {
         	return;
         }
         mu.appendLog(DEBUG_TAG, "onLocationChanged method invoked by " + location.getProvider());
+        Log.e(DEBUG_TAG, "onLocationChanged method invoked by " + location.getProvider());
+        Log.e(DEBUG_TAG, "onLocationChanged getLatitude: " + location.getLatitude());
+        Log.e(DEBUG_TAG, "onLocationChanged getLongitude: " + location.getLongitude());
         mLastLocationMillis = SystemClock.elapsedRealtime();
         
 //        intent.putExtra("lasttime", mLastLocationMillis);

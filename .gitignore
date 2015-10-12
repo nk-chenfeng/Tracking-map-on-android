@@ -24,3 +24,5 @@ local.properties
 
 # to filter API key
 keys.xml
+
+.settings/
